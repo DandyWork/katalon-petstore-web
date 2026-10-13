@@ -6,4 +6,43 @@
    <comment></comment>
    <recordOption>OTHER</recordOption>
    <testCaseGuid>7855940e-a494-42fa-a58f-b4edca900428</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>8bb0e393-9f4b-422b-a022-e943674248eb</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>b78f85e0-48dd-44fb-8091-ff8ea9cccc33</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>e36fb901-077a-44af-9556-3f8ef42581f8</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'j2ee'</defaultValue>
+      <description></description>
+      <id>8bb0e393-9f4b-422b-a022-e943674248eb</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+   <variable>
+      <defaultValue>'j2ee'</defaultValue>
+      <description></description>
+      <id>b78f85e0-48dd-44fb-8091-ff8ea9cccc33</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
+   <variable>
+      <defaultValue>'success'</defaultValue>
+      <description></description>
+      <id>e36fb901-077a-44af-9556-3f8ef42581f8</id>
+      <masked>false</masked>
+      <name>expected</name>
+   </variable>
 </TestCaseEntity>

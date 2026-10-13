@@ -21,27 +21,34 @@ CustomKeywords.'common.ChromeClean.openChromeClean'()
 
 WebUI.navigateToUrl(GlobalVariable.G_BaseUrl)
 
-WebUI.waitForElementPresent(findTestObject('Catalog/btn_SignIn'), 0)
-
-WebUI.verifyElementPresent(findTestObject('Catalog/btn_SignIn'), 0)
-
+WebUI.waitForElementPresent(findTestObject('Catalog/btn_SignIn'), 10)
+WebUI.verifyElementPresent(findTestObject('Catalog/btn_SignIn'), 10)
 WebUI.click(findTestObject('Catalog/btn_SignIn'))
 
-WebUI.waitForElementPresent(findTestObject('SignIn/txt_TitlePage'), 0)
+WebUI.waitForElementPresent(findTestObject('SignIn/txt_TitlePage'), 10)
+WebUI.verifyElementPresent(findTestObject('SignIn/txt_TitlePage'), 10)
+WebUI.verifyElementPresent(findTestObject('SignIn/txt_UserAndPass'), 10)
 
-WebUI.verifyElementPresent(findTestObject('SignIn/txt_TitlePage'), 0)
-
-WebUI.verifyElementPresent(findTestObject('SignIn/txt_UserAndPass'), 0)
-
-WebUI.setText(findTestObject('SignIn/input_Username'), GlobalVariable.G_Username)
-
-WebUI.setText(findTestObject('SignIn/input_Password'), GlobalVariable.G_Password)
-
+WebUI.setText(findTestObject('SignIn/input_Username'), username)
+WebUI.setText(findTestObject('SignIn/input_Password'), password)
 WebUI.click(findTestObject('SignIn/btn_Login'))
 
-WebUI.waitForElementPresent(findTestObject('Catalog/txt_WelcomeText'), 0)
+if (expected == 'success') {
+	WebUI.waitForElementPresent(findTestObject('Catalog/txt_WelcomeText'), 10)
+	WebUI.verifyElementPresent(findTestObject('Catalog/txt_WelcomeText'), 10)
 
-WebUI.verifyElementPresent(findTestObject('Catalog/txt_WelcomeText'), 0)
+} else if (expected == 'invalid') {
+	WebUI.waitForElementPresent(findTestObject('SignIn/txt_invalidLogin'), 10)
+	WebUI.verifyElementPresent(findTestObject('SignIn/txt_invalidLogin'), 10)
+	WebUI.verifyElementNotPresent(findTestObject('Catalog/txt_WelcomeText'), 3)
+
+} else if (expected == 'empty') {
+	// page reloads with no message: still on the sign in page and not logged in
+	WebUI.verifyElementPresent(findTestObject('SignIn/txt_TitlePage'), 10)
+	WebUI.verifyElementPresent(findTestObject('SignIn/btn_Login'), 10)
+	WebUI.verifyElementNotPresent(findTestObject('SignIn/txt_invalidLogin'), 3)
+	WebUI.verifyElementNotPresent(findTestObject('Catalog/txt_WelcomeText'), 3)
+}
 
 WebUI.closeBrowser()
 
