@@ -45,4 +45,11 @@
          <variableId>e36fb901-077a-44af-9556-3f8ef42581f8</variableId>
       </variableLink>
    </testCaseLink>
+   <testCaseLink>
+      <guid>fa0cb9b2-5b59-4e24-b96c-b791ac47f487</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Logout</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
 </TestSuiteEntity>
