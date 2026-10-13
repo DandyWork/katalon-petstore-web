@@ -25,9 +25,11 @@ public class LoginKeywords {
 	def login(String username = GlobalVariable.G_Username, String password = GlobalVariable.G_Password) {
 		WebUI.navigateToUrl(GlobalVariable.G_BaseUrl)
 
+		WebUI.waitForElementPresent(findTestObject('Catalog/btn_SignIn'), 0)
 		WebUI.verifyElementPresent(findTestObject('Catalog/btn_SignIn'), 0)
 		WebUI.click(findTestObject('Catalog/btn_SignIn'))
 
+		WebUI.waitForElementPresent(findTestObject('SignIn/txt_TitlePage'), 0)
 		WebUI.verifyElementPresent(findTestObject('SignIn/txt_TitlePage'), 0)
 		WebUI.verifyElementPresent(findTestObject('SignIn/txt_UserAndPass'), 0)
 
@@ -35,6 +37,7 @@ public class LoginKeywords {
 		WebUI.setText(findTestObject('SignIn/input_Password'), password)
 		WebUI.click(findTestObject('SignIn/btn_Login'))
 
-		WebUI.verifyElementPresent(findTestObject('SignIn/txt_WelcomeText'), 0)
+		WebUI.waitForElementPresent(findTestObject('Catalog/txt_WelcomeText'), 0)
+		WebUI.verifyElementPresent(findTestObject('Catalog/txt_WelcomeText'), 0)
 	}
 }

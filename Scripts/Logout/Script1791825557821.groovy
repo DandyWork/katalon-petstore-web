@@ -17,12 +17,19 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('')
+CustomKeywords.'common.ChromeClean.openChromeClean'()
 
 CustomKeywords.'common.LoginKeywords.login'()
 
+WebUI.waitForElementPresent(findTestObject('Catalog/btn_SignOut'), 0)
+
 WebUI.verifyElementPresent(findTestObject('Catalog/btn_SignOut'), 0)
+
 WebUI.click(findTestObject('Catalog/btn_SignOut'))
+
+WebUI.waitForElementPresent(findTestObject('Catalog/btn_SignIn'), 0)
+
 WebUI.verifyElementPresent(findTestObject('Catalog/btn_SignIn'), 0)
 
 WebUI.closeBrowser()
+
