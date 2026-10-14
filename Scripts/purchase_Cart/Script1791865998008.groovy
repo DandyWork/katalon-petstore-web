@@ -18,8 +18,6 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import java.text.SimpleDateFormat as SimpleDateFormat
 
-CustomKeywords.'common.ChromeClean.openChromeClean'()
-
 WebUI.callTestCase(findTestCase('Test Cases/add_Cart'), [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.click(findTestObject('Catalog/btn_ShoppingCart'))
